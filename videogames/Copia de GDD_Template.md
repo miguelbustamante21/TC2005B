@@ -11,34 +11,32 @@
 
 ---
 
-1. [Index](#index)
-2. [Game Design](#game-design)
-    1. [Summary](#summary)
-    2. [Gameplay](#gameplay)
-    3. [Mindset](#mindset)
-3. [Technical](#technical)
-    1. [Screens](#screens)
-    2. [Controls](#controls)
-    3. [Mechanics](#mechanics)
-4. [Level Design](#level-design)
-    1. [Themes](#themes)
-        1. Ambience
-        2. Objects
-            1. Ambient
-            2. Interactive
-        3. Challenges
-    2. [Game Flow](#game-flow)
-5. [Development](#development)
-    1. [Abstract Classes](#abstract-classes--components)
-    2. [Derived Classes](#derived-classes--component-compositions)
-6. [Graphics](#graphics)
-    1. [Style Attributes](#style-attributes)
-    2. [Graphics Needed](#graphics-needed)
-7. [Sounds/Music](#soundsmusic)
-    1. [Style Attributes](#style-attributes-1)
-    2. [Sounds Needed](#sounds-needed)
-    3. [Music Needed](#music-needed)
-8. [Schedule](#schedule)
+- [**JazzSmash**](#jazzsmash)
+  - [_Game Design Document_](#game-design-document)
+        - [**Copyright notice / author information / boring legal stuff nobody likes**](#copyright-notice--author-information--boring-legal-stuff-nobody-likes)
+  - [_Index_](#index)
+  - [_Game Design_](#game-design)
+    - [**Summary**](#summary)
+    - [**Gameplay**](#gameplay)
+    - [**Mindset**](#mindset)
+  - [_Technical_](#technical)
+    - [**Screens**](#screens)
+    - [**Controls**](#controls)
+    - [**Mechanics**](#mechanics)
+  - [_Level Design_](#level-design)
+    - [**Themes**](#themes)
+    - [**Game Flow**](#game-flow)
+  - [_Development_](#development)
+    - [**Abstract Classes / Components**](#abstract-classes--components)
+    - [**Derived Classes / Component Compositions**](#derived-classes--component-compositions)
+  - [_Graphics_](#graphics)
+    - [**Style Attributes**](#style-attributes)
+    - [**Graphics Needed**](#graphics-needed)
+  - [_Sounds/Music_](#soundsmusic)
+    - [**Style Attributes**](#style-attributes-1)
+    - [**Sounds Needed**](#sounds-needed)
+    - [**Music Needed**](#music-needed)
+  - [_Schedule_](#schedule)
 
 ## _Game Design_
 
@@ -46,7 +44,7 @@
 
 ### **Summary**
 
-Just run and push the keyboard keys following the rythm with the magic sound of jazz. L
+The aim of Jazz Smash is a replayable, addictive, and visual experience, with a focus on educating the player on rhythm practice and some the basic aspects of drumming. 
 
 ### **Gameplay**
 
