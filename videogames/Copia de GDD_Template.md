@@ -1,4 +1,4 @@
-# **Game Name Here**
+# **JazzSmash**
 
 ## _Game Design Document_
 
@@ -46,11 +46,11 @@
 
 ### **Summary**
 
-Sum up your game idea in 2 sentences. A kind of elevator pitch. Keep it simple!
+Just run and push the keyboard keys following the rythm with the magic sound of jazz. 
 
 ### **Gameplay**
 
-What should the gameplay be like? What is the goal of the game, and what kind of obstacles are in the way? What tactics should the player use to overcome them?
+The gameplay is based on endlessrunner games such as Muse Dash or Geometry Dash, the main objective of the game is to reach the highest score in 3 musical levels, the player must follow the rythm of the notes in order to complete the stage reaching the end of the map. To earn points and increase the final score the user has to tap the enemies at the right time of the bpm. 
 
 ### **Mindset**
 
