@@ -46,7 +46,7 @@
 
 ### **Summary**
 
-Just run and push the keyboard keys following the rythm with the magic sound of jazz. 
+Just run and push the keyboard keys following the rythm with the magic sound of jazz. L
 
 ### **Gameplay**
 
