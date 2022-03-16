@@ -52,7 +52,7 @@ The gameplay is based on endlessrunner games such as Muse Dash or Geometry Dash,
 
 ### **Mindset**
 
-What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
+Jazz Smash aims to have the player tense up during certain game sections, particularly in a hard level, however the player is expected to feel satisfaction when destroying drum set parts correctly. Depending on the level the player selects, it might invoke a hurried feel, or a more tranquil vibe.
 
 ## _Technical_
 
@@ -61,22 +61,43 @@ What kind of mindset do you want to provoke in the player? Do you want them to f
 ### **Screens**
 
 1. Title Screen
-    1. Options
-2. Level Select
+2. Menu screen
+    1. Play
+        1. Level select screen
+    2. Practice
+        1. Level select screen
 3. Game
-    1. Inventory
-    2. Assessment / Next Level
-4. End Credits
+    1. Pause screen
+    2. Score screen (level end)
 
 _(example)_
 
 ### **Controls**
 
-How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
+Menu controls: the only way to navigate through the menu will be clicking the different buttons of the screen using the mouse.
+
+Game controls: the position of the keys is inspired by the order and style of the drums in a drum set. The player is not going to be able to choose wich keys to use.
+
+    a: Hi-hat
+    w: Crash cymbal
+    d: Snare drum
+    spacebar: Bass drum
+    l: Floor tom
+    i: Ride Cymbal
+    j: Tom-tom
 
 ### **Mechanics**
 
-Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
+Combat - in order to attack, the player must tap the keys that match the drum set parts, this is the only way to make the character move and destroy the objetives. The drum kit parts will be destroyed when the hitbox of the crosshair breaks them within a certain distance between the player and the enemy. If the player fails to break a drum part, a "Miss" message and sound will be executed, which will affect accuracy and score. 
+##
+Score - score will be determined based on how many drum kit parts the player breaks, and fails to break. It will be saved and displayed at the end of the level. Also if the player fails a certain amount of attacks, will be forced to restart the level.
+##
+Accuracy - the player's accuracy when hitting drum kit parts will be calculated based on how close the part was to the crosshair when it's broken. A margin of error will be established in order to determine the accuracy of the attack.
+##
+Speed - depending on which level the player selects (Easy, Normal, Hard, Whiplash), the song's tempo will be directly related to the toughness of the level. 
+##
+Spawning - the enemies will spawn according to the bpm of the song, which depends sloley on the level that the player selects. Drum kit parts will spawn in "clusters" or "chunks", representing a repeatable section of the song. Chunks will be [DEFINIR COMO SE VA A LEER LA CANCION]
+##
 
 ## _Level Design_
 
@@ -86,42 +107,29 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 
 ### **Themes**
 
-1. Forest
-    1. Mood
-        1. Dark, calm, foreboding
-  2. Objects
-        1. _Ambient_
-            1. Fireflies
-            2. Beams of moonlight
-            3. Tall grass
-        2. _Interactive_
-            1. Wolves
-            2. Goblins
-            3. Rocks
-2. Castle
-    1. Mood
-        1. Dangerous, tense, active
-    2. Objects
-        1. _Ambient_
-            1. Rodents
-            2. Torches
-            3. Suits of armor
-        2. _Interactive_
-            1. Guards
-            2. Giant rats
-            3. Chests
+1. Easy level: will have a relaxed feel, with a soft/content jazz beat. The ambient will consist of a typical bar stage with a low audience. The player will only interact with the drum kit parts by destroying them.
 
-_(example)_
+(sketch del nivel)
+
+2. Normal level: will have an upbeat/active, happy feel, which will not stress the player, but challenge him in certain sections of the song. The ambient will consist of a typical bar stage with a visibly active audience. The player will only interact with the drum kit parts by destroying them.
+
+(sketch del nivel)
+
+3. Hard level: will have an exhuberant/energetic feel, with a fast and more complex beat sequence. The ambient will consist of a small bar, with a packed audience. The player will only interact with the drum kit parts by destroying them.
+
+(sketch del nivel)
+
+4. Whiplash: will have frantic/serious feel, with a nearly impossible beat sequence. The player will only interact with the drum kit parts by destroying them. The ambient will consist of an empty dark bar, with a single audience member cheering the player. The player will only interact with the drum kit parts by destroying them.
+
+(sketch del nivel)
 
 ### **Game Flow**
 
-1. Player starts in forest
-2. Pond to the left, must move right
-3. To the right is a hill, player jumps to traverse it (&quot;jump&quot; taught)
-4. Player encounters castle - door&#39;s shut and locked
-5. There&#39;s a window within jump height, and a rock on the ground
-6. Player picks up rock and throws at glass (&quot;throw&quot; taught)
-7. … etc.
+1. Level starts with a drumstick beat as a "countdown", while displaying the words "Ready?" and "Go!".
+2. Drum kit parts start flowing down the screen into the player/drum set.
+3. The player destroys the drum kit parts following the song bpm and part sequence.
+4. When the song ends, a message is displayed with the words "Finish!".
+5. The players score and accuracy are displayed at the end of the level.
 
 _(example)_
 
