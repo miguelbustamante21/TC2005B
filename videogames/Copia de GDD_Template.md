@@ -31,6 +31,7 @@
     - [**Derived Classes / Component Compositions**](#derived-classes--component-compositions)
   - [_Graphics_](#graphics)
     - [**Style Attributes**](#style-attributes)
+    - [**Visual feedback**](#visual-feedback)
     - [**Graphics Needed**](#graphics-needed)
   - [_Sounds/Music_](#soundsmusic)
     - [**Style Attributes**](#style-attributes-1)
@@ -214,8 +215,7 @@ Having practice levels to choose from will also let the player experience the ga
     6. Pause menu buttons
     7. Level end data display art
 
-_(example)_
-
+![level sketch](markdown-images/sketch1.jpg)
 
 ## _Sounds/Music_
 
@@ -238,8 +238,6 @@ The music will be the most predominant sound played during the level. As the sou
     6. Button click sound (any button except the menu "play" button)
     7. Small drumming sequence (menu "play" button)
 
-_(example)_
-
 ### **Music Needed**
 
 1. Level 1 music (slow paced, relaxed)
@@ -247,32 +245,27 @@ _(example)_
 3. Level 3 music (fast, energetic)
 5. Main menu music
 
-_(example)_
-
-
 ## _Schedule_
 
 ---
 
-_(define the main activities and the expected dates when they should be finished. This is only a reference, and can change as the project is developed)_
-
-1. develop base classes
-    1. base entity
-        1. base player
-        2. base enemy
-        3. base note
-  2. base app state
-        1. game level
-        2. menu world
-2. develop player and basic block classes
-    1. physics (enemies going down towards the player hitbox)/ collisions (hitting the target/enemy)
-3. find some smooth controls/physics
-4. develop other derived classes
-    1. targets/notes/enemies
-        1. falling
-        2. breaking
-        3. earned points because of the destruction of the target
-    2. enemies
+1. Develop base classes (due april 8th 2022)
+    1. Base entity
+        1. Base player
+        2. Base enemy
+        3. Base note
+  1. Base app state
+        1. Game level
+        2. Menu world
+2. Develop player and basic block classes  (due april 15th 2022)
+    1. Physics (enemies going down towards the player hitbox)/ collisions (hitting the target/enemy)
+3. Establish smooth controls/physics (due april 15th 2022)
+4. Develop other derived classes
+    1. Targets/notes/enemies (due april 29th 2022)
+        1. Falling
+        2. Breaking
+        3. Earned points because of the destruction of the target
+    2. Enemies (due april 29th 2022)
         1. bass drum
         2. snare drum 
         3. hi-hat
@@ -280,12 +273,10 @@ _(define the main activities and the expected dates when they should be finished
         5. floor tom
         6. mid tom
         7. high tom
-5. design levels
-    1. easy 
-    2. normal
-    3. hard
-    4. whiplash
-6. design sounds
-7. design music
-
-_(example)_
+5. Design levels (due may 13th)
+    1. Easy 
+    2. Normal
+    3. Hard
+    4. Whiplash
+6. Design sounds (due may 13th)
+7. Design music (due may 20th)
