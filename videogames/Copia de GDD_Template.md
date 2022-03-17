@@ -96,32 +96,27 @@ Accuracy - the player's accuracy when hitting drum kit parts will be calculated 
 ##
 Speed - depending on which level the player selects (Easy, Normal, Hard, Whiplash), the song's tempo will be directly related to the toughness of the level. 
 ##
-Spawning - the enemies will spawn according to the bpm of the song, which depends sloley on the level that the player selects. Drum kit parts will spawn in "clusters" or "chunks", representing a repeatable section of the song. Chunks will be [DEFINIR COMO SE VA A LEER LA CANCION]
+Spawning - the enemies will spawn according to the bpm of the song, which depends on the level that the player selects. Drum kit parts will spawn [VER COMO REPLICAR GUITAR HERO PARA EXPLICAR SPAWNING]
+
 ##
 
 ## _Level Design_
 
 ---
 
-_(Note : These sections can safely be skipped if they&#39;re not relevant, or you&#39;d rather go about it another way. For most games, at least one of them should be useful. But I&#39;ll understand if you don&#39;t want to use them. It&#39;ll only hurt my feelings a little bit.)_
-
 ### **Themes**
 
 1. Easy level: will have a relaxed feel, with a soft/content jazz beat. The ambient will consist of a typical bar stage with a low audience. The player will only interact with the drum kit parts by destroying them.
 
-(sketch del nivel)
+_(example)_
 
 2. Normal level: will have an upbeat/active, happy feel, which will not stress the player, but challenge him in certain sections of the song. The ambient will consist of a typical bar stage with a visibly active audience. The player will only interact with the drum kit parts by destroying them.
 
-(sketch del nivel)
+_(example)_
 
 3. Hard level: will have an exhuberant/energetic feel, with a fast and more complex beat sequence. The ambient will consist of a small bar, with a packed audience. The player will only interact with the drum kit parts by destroying them.
 
-(sketch del nivel)
-
-4. Whiplash: will have frantic/serious feel, with a nearly impossible beat sequence. The player will only interact with the drum kit parts by destroying them. The ambient will consist of an empty dark bar, with a single audience member cheering the player. The player will only interact with the drum kit parts by destroying them.
-
-(sketch del nivel)
+_(example)_
 
 ### **Game Flow**
 
@@ -179,42 +174,46 @@ _(example)_
 
 ### **Style Attributes**
 
-What kinds of colors will you be using? Do you have a limited palette to work with? A post-processed HSV map/image? Consistency is key for immersion.
+As the game is set inside a jazz lounge, the game will employ colors commonly found in jazz clubs, as well as the main stage. By using a dark pallete to simulate a dark or night environment, a mellow or elegeant ambiance will be invoked.
 
-What kind of graphic style are you going for? Cartoony? Pixel-y? Cute? How, specifically? Solid, thick outlines with flat hues? Non-black outlines with limited tints/shades? Emphasize smooth curvatures over sharp angles? Describe a set of general rules depicting your style here.
+As we're dealing with a pixel-art artstyle, the game will contain as few colors as possible, while providing a clear distinction between assets.
 
-Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), are great for teaching the player how to play through trial and error, instead of scripting a lengthy tutorial. What kind of visual feedback are you going to use to let the player know they&#39;re interacting with something? That they \*can\* interact with something?
+As mentioned, the game will employ a pixel-art graphic style, using color gadients for assets in order to simulate volume and lighning. Curvature will also be simulated with as few pixels as possible, while maintaining a low level of detail.
+##
+### **Visual feedback**
+
+Keystrokes corresponding to whichever drum kit part will result in a simple animation with the player swinging drum sticks, and animations for each of the part(s) exploding upon a successful attack. This will result in a score counter increasing or decreasing in case the player fails the attack. At the end of the level, the player will be able to see his final score, as well as his overall accuracy.
+
+Having practice levels to choose from will also let the player experience the game without a score constraint, and learn the keystrokes for the corresponding level.
 
 ### **Graphics Needed**
 
 1. Characters
-    1. Human-like
-        1. Goblin (idle, walking, throwing)
-        2. Guard (idle, walking, stabbing)
-        3. Prisoner (walking, running)
-    2. Other
-        1. Wolf (idle, walking, running)
-        2. Giant Rat (idle, scurrying)
-2. Blocks
-    1. Dirt
-    2. Dirt/Grass
-    3. Stone Block
-    4. Stone Bricks
-    5. Tiled Floor
-    6. Weathered Stone Block
-    7. Weathered Stone Bricks
+    1. Playable
+        1. Main character cat (facing the audience, beating the drums based on player input)
+    2. Non playable
+        1. Audience (drinking, moving to the beat, cheering)
+2. Drum kit sprites
+    1. Hi-hat (idle, exploding)
+    2. Crash cymbal (idle, exploding)
+    3. Snare drum (idle, exploding)
+    4. Bass drum (idle, exploding)
+    5. Floor tom (idle, exploding)
+    6. Ride Cymbal (idle, exploding)
+    7. Tom-tom (idle, exploding)
 3. Ambient
-    1. Tall Grass
-    2. Rodent (idle, scurrying)
-    3. Torch
-    4. Armored Suit
-    5. Chains (matching Weathered Stone Bricks)
-    6. Blood stains (matching Weathered Stone Bricks)
+    1. Drum kit sprite (in front of the character)
+    2. Background (including floor, stage curtain, and the club)
+    3. Attack combo message
+    4. Attack miss message
 4. Other
-    1. Chest
-    2. Door (matching Stone Bricks)
-    3. Gate
-    4. Button (matching Weathered Stone Bricks)
+    1. Splash screen art
+    2. Menu art
+    3. Menu buttons
+    4. Mouse cursor
+    5. Pause menu art
+    6. Pause menu buttons
+    7. Level end data display art
 
 _(example)_
 
@@ -224,38 +223,30 @@ _(example)_
 ---
 
 ### **Style Attributes**
+JazzSmash will utilize several public domain jazz songs. The jazz utilized will invoke the sensation of ellegance and sophistication that can be found in the style of music. 
 
-Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
+Starting the different levels, there will be a Drummer stick beat to remind the player that he is a Drummer preparing to play the piece. 
 
-Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario&#39;s jump), or use just enough to let the player know something happened (e.g. mega man&#39;s landing)? Going for realism? You can use the music style as a bit of a reference too.
-
- Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music _and_ sounds - so plan accordingly!
-
+The music will be the most predominant sound played during the level. As the sound will correlate with the instruments shown during the level. 
 ### **Sounds Needed**
 
-1. Effects
-    1. Soft Footsteps (dirt floor)
-    2. Sharper Footsteps (stone floor)
-    3. Soft Landing (low vertical velocity)
-    4. Hard Landing (high vertical velocity)
-    5. Glass Breaking
-    6. Chest Opening
-    7. Door Opening
-2. Feedback
-    1. Relieved &quot;Ahhhh!&quot; (health)
-    2. Shocked &quot;Ooomph!&quot; (attacked)
-    3. Happy chime (extra life)
-    4. Sad chime (died)
+1. Feedback
+    1. Start &quot;Drum strike&quot; (game start)
+    2. Miss Sound &quot;Thud&quot; (missed attack)
+    3. Clap (successful level end)
+    4. Small random drumming sequence (right after losing)
+    5. Booing and jeering (game over)
+    6. Button click sound (any button except the menu "play" button)
+    7. Small drumming sequence (menu "play" button)
 
 _(example)_
 
 ### **Music Needed**
 
-1. Slow-paced, nerve-racking &quot;forest&quot; track
-2. Exciting &quot;castle&quot; track
-3. Creepy, slow &quot;dungeon&quot; track
-4. Happy ending credits track
-5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot;
+1. Level 1 music (slow paced, relaxed)
+2. Level 2 music (upbeat, happy)
+3. Level 3 music (fast, energetic)
+5. Main menu music
 
 _(example)_
 
