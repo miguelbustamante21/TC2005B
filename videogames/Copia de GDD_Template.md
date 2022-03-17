@@ -147,25 +147,24 @@ _(example)_
 
 1. BasePlayer
     1. PlayerMain
-    2. PlayerUnlockable
 2. BaseEnemy
-    1. EnemyWolf
-    2. EnemyGoblin
-    3. EnemyGuard (may drop key)
-    4. EnemyGiantRat
-    5. EnemyPrisoner
-3. BaseObject
-    1. ObjectRock (pick-up-able, throwable)
-    2. ObjectChest (pick-up-able, throwable, spits gold coins with key)
-    3. ObjectGoldCoin (cha-ching!)
-    4. ObjectKey (pick-up-able, throwable)
-4. BaseObstacle
-    1. ObstacleWindow (destroyed with rock)
-    2. ObstacleWall
-    3. ObstacleGate (watches to see if certain buttons are pressed)
-5. BaseInteractable
-    1. InteractableButton
-
+    1. EnemyBassDrum
+    2. EnemySnareDrum 
+    3. EnemyHi-Hat
+    4. EnemyCrashCymbal
+    5. EnemyFloorTom
+    6. EnemyRideCymbal
+    7. EnemyTom-Tom
+3. BaseInteractable
+    1. PauseButton
+4. BaseControlls
+    1. rKey
+    2. eKey
+    3. aKey
+    4. SpaceBar
+    5. iKey
+    6. oKey
+    7. lKey
 _(example)_
 
 ## _Graphics_
@@ -261,27 +260,31 @@ _(define the main activities and the expected dates when they should be finished
     1. base entity
         1. base player
         2. base enemy
-        3. base block
+        3. base note
   2. base app state
-        1. game world
+        1. game level
         2. menu world
 2. develop player and basic block classes
-    1. physics / collisions
+    1. physics (enemies going down towards the player hitbox)/ collisions (hitting the target/enemy)
 3. find some smooth controls/physics
 4. develop other derived classes
-    1. blocks
-        1. moving
-        2. falling
-        3. breaking
-        4. cloud
+    1. targets/notes/enemies
+        1. falling
+        2. breaking
+        3. earned points because of the destruction of the target
     2. enemies
-        1. soldier
-        2. rat
-        3. etc.
+        1. bass drum
+        2. snare drum 
+        3. hi-hat
+        4. crash cymbal
+        5. floor tom
+        6. mid tom
+        7. high tom
 5. design levels
-    1. introduce motion/jumping
-    2. introduce throwing
-    3. mind the pacing, let the player play between lessons
+    1. easy 
+    2. normal
+    3. hard
+    4. whiplash
 6. design sounds
 7. design music
 
