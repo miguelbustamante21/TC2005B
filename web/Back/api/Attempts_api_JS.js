@@ -82,7 +82,7 @@ app.put('/api/attempts', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('update attempts set level_att = ?, score = ?, where user_id = ?', [request.body['level_att'], request.body['score'], request.body['user_id']], (error, results, fields)=>{
+        const query = connection.query('update attempts set level_att = ?, score = ? where user_id = ?', [request.body['level_att'], request.body['score'], request.body['user_id']], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else

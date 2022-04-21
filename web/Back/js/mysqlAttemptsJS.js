@@ -61,7 +61,7 @@ function main()
         //     data[key] = value
         // console.log(JSON.stringify(data))
 
-        let response = await fetch('http://localhost:3000/api/attemps',{
+        let response = await fetch('http://localhost:3000/api/attempts',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -86,7 +86,7 @@ function main()
         const data = new FormData(formUpdate)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/attemps',{
+        let response = await fetch('http://localhost:3000/api/attempts',{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -111,7 +111,7 @@ function main()
         const data = new FormData(formDelete)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/attemps',{
+        let response = await fetch('http://localhost:3000/api/attempts',{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
