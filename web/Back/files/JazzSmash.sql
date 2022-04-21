@@ -29,6 +29,6 @@ CREATE TABLE user_data (
     lvl_2_attempts smallint unsigned not null default 0,
     primary key (user_name),
     -- key idx_fk_user_id (user_id),
-    CONSTRAINT `fk_user_id` FOREIGN KEY (user_id) REFERENCES attempts (user_id) 
+    CONSTRAINT FOREIGN KEY (user_id) REFERENCES attempts (user_id) 
     ON DELETE RESTRICT ON UPDATE CASCADE
 ); -- Se usará InnoDB para la agrupación de datos con la llave principal (user_name)

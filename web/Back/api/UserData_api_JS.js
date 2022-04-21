@@ -15,7 +15,7 @@ app.use('/css', express.static('./css'))
 function connectToDB()
 {
     try{
-        return mysql.createConnection({host:'localhost', user:'MiguelB', password:'deadspace74', database:'api_game_db'});
+        return mysql.createConnection({host:'localhost', user:'Michael21', password:'Messi10_Dybala21', database:'jazzsmash'});
     }
     catch(error)
     {
@@ -24,21 +24,21 @@ function connectToDB()
 }
 
 app.get('/', (request,response)=>{
-    fs.readFile('../html/mysqlUseCases.html', 'utf8', (err, html)=>{
+    fs.readFile('./html/mysqlUserDataJS.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err);
         console.log('Loading page...');
         response.send(html);
     })
 });
 
-app.get('/api/users', (request, response)=>{
+app.get('/api/user_data', (request, response)=>{
     let connection = connectToDB();
 
     try{
 
         connection.connect();
 
-        connection.query('select * from users', (error, results, fields)=>{
+        connection.query('select * from user_data', (error, results, fields)=>{
             if(error) console.log(error);
             console.log(JSON.stringify(results));
             response.json(results);
@@ -53,7 +53,7 @@ app.get('/api/users', (request, response)=>{
     }
 });
 
-app.post('/api/users', (request, response)=>{
+app.post('/api/user_data', (request, response)=>{
 
     try{
         console.log(request.headers);
@@ -61,7 +61,7 @@ app.post('/api/users', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('insert into users set ?', request.body ,(error, results, fields)=>{
+        const query = connection.query('insert into user_data set ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -77,12 +77,12 @@ app.post('/api/users', (request, response)=>{
     }
 });
 
-app.put('/api/users', (request, response)=>{
+app.put('/api/user_data', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('update users set name = ?, surname = ? where id_users= ?', [request.body['name'], request.body['surname'], request.body['userID']] ,(error, results, fields)=>{
+        const query = connection.query('update user_data set user_name = ?, country = ?  where user_id = ?', [request.body['user_name'], request.body['country'], request.body['user_id']], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -98,13 +98,13 @@ app.put('/api/users', (request, response)=>{
     }
 });
 
-app.delete('/api/users', (request, response)=>{
+app.delete('/api/user_data', (request, response)=>{
     try
     {
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from users where id_users= ?', [request.body['userID']] ,(error, results, fields)=>{
+        const query = connection.query('delete from user_data where user_id= ?', [request.body['id']] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
