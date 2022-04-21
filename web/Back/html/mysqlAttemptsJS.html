@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mysqlAttemptsJS.css">
+    <script type="module" defer src="../js/mysqlAttemptsJS.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="section">
+        <div class="formInput">
+            <h1>Show attempts</h1>
+            <form id="formSelect">
+                <input type="submit" value="Show attempts">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p>When the request ends, the result will be displayed here.</p>
+            <div id="getResults"></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Add attempt</h1>
+            <form id="formInsert" method="post" action="http://localhost:5000/api/attemps">
+                <input type="text" name="user_id" placeholder="Type an existant user id">
+                <input type="text" name="level_att" placeholder="Type the level attempted">
+                <input type="text" name="score" placeholder="Type your score">
+                <input type="text" name="accuracy" placeholder="Type your level accuracy">
+                <input type="text" name="time_elapsed" placeholder="Type your time elapsed">
+                <input type="text" name="result" placeholder="Type your result">
+                <input type="submit" value="Add Attempt">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="postResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Update attempt</h1>
+            <form id="formUpdate" method="put">
+                <input type="text" name="user_id" placeholder="Type your an existant user id">
+                <input type="text" name="level_att" placeholder="Type the new level attempted">
+                <input type="text" name="score" placeholder="Type your new score">
+                <input type="submit" value="Update Attempt">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="putResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Delete attempt</h1>
+            <form id="formDelete" method="delete">
+                <input type="text" name="id" placeholder="Type your id">
+                <input type="submit" value="Delete Attempt">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="deleteResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+</body>
+</html>

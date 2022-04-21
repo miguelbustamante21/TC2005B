@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mysqlUserDataJS.css">
+    <script type="module" defer src="../js/mysqlUserDataJS.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="section">
+        <div class="formInput">
+            <h1>Show users</h1>
+            <form id="formSelect">
+                <input type="submit" value="Show users">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p>When the request ends, the result will be displayed here.</p>
+            <div id="getResults"></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Add user</h1>
+            <form id="formInsert" method="post" action="http://localhost:5000/api/user_data">
+                <input type="text" name="user_name" placeholder="Type your first name">
+                <input type="text" name="country" placeholder="Type your country">
+                <input type="text" name="lvl_1_highscore" placeholder="Type your level 1 highscore">
+                <input type="text" name="lvl_2_highscore" placeholder="Type your level 2 highscore">
+                <input type="text" name="lvl_1_rating" placeholder="Type your level 1 rating">
+                <input type="text" name="lvl_2_rating" placeholder="Type your level 2 rating">
+                <input type="text" name="lvl_1_attempts" placeholder="Type your level 1 attemps">
+                <input type="text" name="lvl_2_attempts" placeholder="Type your level 2 attemps">
+                <input type="submit" value="Add User">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="postResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Update user</h1>
+            <form id="formUpdate" method="put">
+                <input type="text" name="user_id" placeholder="Type your id">
+                <input type="text" name="user_name" placeholder="Type your first new name">
+                <input type="text" name="country" placeholder="Type your new country">
+                <input type="submit" value="Update User">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="putResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Delete user</h1>
+            <form id="formDelete" method="delete">
+                <input type="text" name="id" placeholder="Type your id">
+                <input type="submit" value="Delete User">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="deleteResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+</body>
+</html>
