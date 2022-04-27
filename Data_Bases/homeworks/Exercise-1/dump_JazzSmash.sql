@@ -57,26 +57,71 @@ CREATE TABLE `user_data` (
   `user_name` varchar(32) NOT NULL,
   `user_id` smallint unsigned NOT NULL AUTO_INCREMENT,
   `country` varchar(32) DEFAULT NULL,
-  `lvl_1_highscore` smallint unsigned NOT NULL DEFAULT '0',
-  `lvl_2_highscore` smallint unsigned NOT NULL DEFAULT '0',
-  `lvl_1_rating` tinyint unsigned DEFAULT NULL,
-  `lvl_2_rating` tinyint unsigned DEFAULT NULL,
-  `lvl_1_attempts` smallint unsigned NOT NULL DEFAULT '0',
-  `lvl_2_attempts` smallint unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
+  
 --
 -- Dumping data for table `user_data`
 --
 
 LOCK TABLES `user_data` WRITE;
 /*!40000 ALTER TABLE `user_data` DISABLE KEYS */;
-INSERT INTO `user_data` VALUES ('Juan Muniain',1,'Mexico',2015,0,NULL,5,1,0),('Octavio Navarro',2,'',0,2400,NULL,4,0,1),('Miguel Bustamante',3,'Brazil',0,1200,NULL,3,0,1),('Manuel Barrera',4,'Argentina',1235,0,5,NULL,1,0),('friedshrimp07',5,'Venezuela',2325,0,5,NULL,1,0),('susbaka',7,'Greenland',0,1005,NULL,3,0,1),('Percussionarts',8,'United States',1565,0,3,NULL,1,0),('Gilecheverria',9,'mexico',0,2225,NULL,5,0,1),('coolpenguin',10,'Antartica',0,1335,NULL,4,0,1),('user1',11,'mexico',1400,0,3,NULL,1,0),('user2',12,'mexico',2340,0,5,NULL,1,0),('user3',13,'mexico',1035,0,3,NULL,1,0),('user4',14,'',2045,0,5,NULL,1,0),('user5',15,'mexico',0,2095,NULL,4,0,1),('user6',16,'mexico',0,2200,NULL,5,0,1),('user7',17,'',2205,0,3,NULL,1,0),('user8',18,'mexico',1995,0,4,NULL,1,0),('user9',19,'',0,1605,3,NULL,0,1),('user10',20,'',1455,0,4,NULL,1,0),('Miguel',22,'Canada',1000,1200,3,4,2,0);
+-- INSERT INTO `user_data` VALUES ('Juan Muniain',1,'Mexico',2015,0,NULL,5,1,0),('Octavio Navarro',2,'',0,2400,NULL,4,0,1),('Miguel Bustamante',3,'Brazil',0,1200,NULL,3,0,1),('Manuel Barrera',4,'Argentina',1235,0,5,NULL,1,0),('friedshrimp07',5,'Venezuela',2325,0,5,NULL,1,0),('susbaka',7,'Greenland',0,1005,NULL,3,0,1),('Percussionarts',8,'United States',1565,0,3,NULL,1,0),('Gilecheverria',9,'mexico',0,2225,NULL,5,0,1),('coolpenguin',10,'Antartica',0,1335,NULL,4,0,1),('user1',11,'mexico',1400,0,3,NULL,1,0),('user2',12,'mexico',2340,0,5,NULL,1,0),('user3',13,'mexico',1035,0,3,NULL,1,0),('user4',14,'',2045,0,5,NULL,1,0),('user5',15,'mexico',0,2095,NULL,4,0,1),('user6',16,'mexico',0,2200,NULL,5,0,1),('user7',17,'',2205,0,3,NULL,1,0),('user8',18,'mexico',1995,0,4,NULL,1,0),('user9',19,'',0,1605,3,NULL,0,1),('user10',20,'',1455,0,4,NULL,1,0),('Miguel',22,'Canada',1000,1200,3,4,2,0);
 /*!40000 ALTER TABLE `user_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+--
+-- Table structure for table `level_data_user`
+--
+
+DROP TABLE IF EXISTS `level_data_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `level_data_user` (
+  `level_name` varchar(32) NOT NULL,
+  `user_id` smallint unsigned NOT NULL,
+  `lvl_1_highscore` smallint unsigned NOT NULL DEFAULT '0',
+  `lvl_2_highscore` smallint unsigned NOT NULL DEFAULT '0',
+  `lvl_1_rating` tinyint unsigned DEFAULT NULL,
+  `lvl_2_rating` tinyint unsigned DEFAULT NULL,
+  `lvl_1_attempts` smallint unsigned NOT NULL DEFAULT '0',
+  `lvl_2_attempts` smallint unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`level_name`),
+  KEY `fk_level_data_user` (`user_id`),
+  CONSTRAINT `fk_level_data_user` FOREIGN KEY (`user_id`) REFERENCES `user_data` (`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  /*!40101 SET character_set_client = @saved_cs_client */;
+  
+--
+-- Dumping data for table `level_data_user`
+--
+
+LOCK TABLES `level_data_user` WRITE;
+/*!40000 ALTER TABLE `level_data_user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `level_data_user` ENABLE KEYS */;
+UNLOCK TABLES; 
+
+DROP TABLE IF EXISTS `music_data`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `music_data` (
+  `song_name` varchar(32) NOT NULL,
+  `duration` smallint unsigned NOT NULL DEFAULT '0',
+  `note_amount` smallint unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`song_name`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  /*!40101 SET character_set_client = @saved_cs_client */;
+  
+--
+-- Dumping data for table `music_data`
+--
+
+LOCK TABLES `music_data` WRITE;
+/*!40000 ALTER TABLE `music_data` DISABLE KEYS */;
+/*!40000 ALTER TABLE `music_data` ENABLE KEYS */;
+UNLOCK TABLES;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

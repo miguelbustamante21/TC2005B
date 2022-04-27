@@ -82,7 +82,7 @@ app.put('/api/user_data', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('update user_data set user_name = ?, country = ?  where user_id = ?', [request.body['user_name'], request.body['country'], request.body['user_id']], (error, results, fields)=>{
+        const query = connection.query('update user_data set user_name = ?, country = ? where user_id = ?', [request.body['user_name'], request.body['country'], request.body['user_id']], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else

@@ -53,7 +53,7 @@ app.get('/api/attempts', (request, response)=>{
     }
 });
 
-app.post('/api/attempts', (request, response)=>{
+/*app.post('/api/attempts', (request, response)=>{
 
     try{
         console.log(request.headers);
@@ -75,9 +75,9 @@ app.post('/api/attempts', (request, response)=>{
         response.json(error);
         console.log(error);
     }
-});
+});*/
 
-app.put('/api/attempts', (request, response)=>{
+/* app.put('/api/attempts', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
@@ -96,7 +96,7 @@ app.put('/api/attempts', (request, response)=>{
         response.json(error);
         console.log(error);
     }
-});
+});*/
 
 app.delete('/api/attempts', (request, response)=>{
     try
