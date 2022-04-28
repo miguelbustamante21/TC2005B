@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mysqlMusicDataJS.css">
+    <script type="module" defer src="../js/mysqlMusicDataJS.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="section">
+        <div class="formInput">
+            <h1>Show music</h1>
+            <form id="formSelect">
+                <input type="submit" value="Show music">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p>When the request ends, the result will be displayed here.</p>
+            <div id="getResults"></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Add a song</h1>
+            <form id="formInsert" method="post" action="http://localhost:5000/api/music_data">
+                <input type="text" name="song_name" placeholder="Type the name of the song">
+                <input type="text" name="duration" placeholder="Type the duration of the song">
+                <input type="text" name="note_amount" placeholder="Type the note amount">
+                <input type="submit" value="Add User">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="postResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Update song</h1>
+            <form id="formUpdate" method="put">
+                <input type="text" name="song_name" placeholder="Type the new name of the song">
+                <input type="text" name="duration" placeholder="Type the duration of the song">
+                <input type="text" name="note_amount" placeholder="Type the amount of notes">
+                <input type="submit" value="Update User">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="putResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Delete a song</h1>
+            <form id="formDelete" method="delete">
+                <input type="text" name="song_name" placeholder="Type the name of the song">
+                <input type="submit" value="Delete song">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="deleteResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+</body>
+</html>

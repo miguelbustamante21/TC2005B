@@ -24,21 +24,21 @@ function connectToDB()
 }
 
 app.get('/', (request,response)=>{
-    fs.readFile('./html/mysqlMusicDataJS.html', 'utf8', (err, html)=>{
+    fs.readFile('./html/mysqlLevelDataUserJS.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err);
         console.log('Loading page...');
         response.send(html);
     })
 });
 
-app.get('/api/music_data', (request, response)=>{
+app.get('/api/level_data_user', (request, response)=>{
     let connection = connectToDB();
 
     try{
 
         connection.connect();
 
-        connection.query('select * from music_data', (error, results, fields)=>{
+        connection.query('select * from level_data_user', (error, results, fields)=>{
             if(error) console.log(error);
             console.log(JSON.stringify(results));
             response.json(results);
@@ -52,8 +52,8 @@ app.get('/api/music_data', (request, response)=>{
         console.log(error);
     }
 });
-
-app.post('/api/music_data', (request, response)=>{
+/*
+app.post('/api/level_data_user', (request, response)=>{
 
     try{
         console.log(request.headers);
@@ -61,7 +61,7 @@ app.post('/api/music_data', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('insert into music_data set ?', request.body ,(error, results, fields)=>{
+        const query = connection.query('insert into level_data_user set ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -77,12 +77,12 @@ app.post('/api/music_data', (request, response)=>{
     }
 });
 
-app.put('/api/music_data', (request, response)=>{
+app.put('/api/level_data_user', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('update music_data set duration = ?, note_amount = ? where song_name = ?', [request.body['duration'], request.body['note_amount'], request.body['song_name']], (error, results, fields)=>{
+        const query = connection.query('update level_data_user set user_name = ?, country = ? where user_id = ?', [request.body['user_name'], request.body['country'], request.body['user_id']], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -97,14 +97,14 @@ app.put('/api/music_data', (request, response)=>{
         console.log(error);
     }
 });
-
-app.delete('/api/music_data', (request, response)=>{
+*/
+app.delete('/api/level_data_user', (request, response)=>{
     try
     {
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from music_data where song_name = ?', [request.body['song_name']] ,(error, results, fields)=>{
+        const query = connection.query('delete from level_data_user where user_id= ?', [request.body['id']] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
