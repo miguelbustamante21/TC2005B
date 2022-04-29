@@ -1,0 +1,67 @@
+body{
+    margin: 0px;
+    background-color: F7FFFF;
+}
+
+.parent {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr repeat(10, 1fr);
+    grid-column-gap: 0.25vw;
+    grid-row-gap: 0.25vh;
+    }
+    .div1 { grid-area: 1 / 1 / 2 / 2; 
+        background-color: aquamarine;
+        width: 25vw;
+        height: 10vh;
+        justify-content: space-around;
+    }
+    .div2 { grid-area: 1 / 3 / 2 / 4; 
+        background-color: cyan;
+        width: 25vw;
+        height: 10vh;
+    }
+    .div3 { grid-area: 2 / 1 / 3 / 4; 
+        justify-self: center;
+        width: 50vw;
+        background-color: cadetblue;
+
+    }
+    .div4 { grid-area: 3 / 2 / 9 / 3; 
+        width: 50vw;
+        height: 200vh;
+        background-color: gold;
+    }
+    .div5 { grid-area: 3 / 1 / 6 / 2; 
+        background-color: khaki;
+        width: 25vw;
+    }
+    .div6 { grid-area: 3 / 3 / 6 / 4; 
+        background-color: khaki;
+        width: 25vw;
+    }
+    .div7 { grid-area: 6 / 1 / 9 / 2; 
+        background-color: grey;
+    }
+    .div8 { grid-area: 6 / 3 / 9 / 4; 
+        background-color: grey;
+    }
+    .div9 { grid-area: 9 / 1 / 11 / 4; 
+        background-color: #b05510;
+        height: 25vh;
+    }
+    .div10 { grid-area: 9 / 1 / 11 / 2; 
+        background-color: darksalmon;
+        width: 25vw;
+    }
+    .div11 { grid-area: 9 / 2 / 11 / 3; 
+        background-color: teal;
+    }
+    .div12 { grid-area: 9 / 3 / 11 / 4; 
+        background-color: darksalmon;
+    }
+#Titulo{
+    margin-left: 40%;
+}
