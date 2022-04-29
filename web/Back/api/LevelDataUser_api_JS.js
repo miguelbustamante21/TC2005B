@@ -52,7 +52,7 @@ app.get('/api/level_data_user', (request, response)=>{
         console.log(error);
     }
 });
-/*
+
 app.post('/api/level_data_user', (request, response)=>{
 
     try{
@@ -97,7 +97,7 @@ app.put('/api/level_data_user', (request, response)=>{
         console.log(error);
     }
 });
-*/
+
 app.delete('/api/level_data_user', (request, response)=>{
     try
     {
