@@ -9,12 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <section class="header">
-        <nav>
-            <a href="JazzSmashWeb.html"><img src="../images/large_size_logo.png"></a>
-            <div class="nav-links">
+<section class="header">
+    <nav>
+        <a href="JazzSmashWeb.html"><img src="../images/large_size_logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="">HOME</a></li>
                     <li><a href="">ABOUT US</a></li>
@@ -22,10 +24,33 @@
                     <li><a href="">HEALTH CARE</a></li>
                     <li><a href="">CONTACT</a></li>
                 </ul>
-            </div>
-        </nav>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+<div class="text-box">
+    <h1>Jazz Smash</h1>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam distinctio, sint fuga rerum excepturi ipsam. Consequuntur perferendis quis at nihil atque fugiat hic tenetur vel veritatis, dolorum mollitia deleniti odit?
+    </p>
+    <a href="" class="hero-btn">Visit us to know more</a>
+</div>
 
-    </section>
-    
+</section>
+
+<!-- JavaScript for toggle menu -->
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+
 </body>
 </html>
