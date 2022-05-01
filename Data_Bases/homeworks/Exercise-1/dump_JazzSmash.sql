@@ -54,7 +54,8 @@ DROP TABLE IF EXISTS `user_data`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_data` (
-  `user_name` varchar(32) NOT NULL,
+  `user_name` varchar(32) NOT NULL UNIQUE,
+  `password` varchar(32) NOT NULL,
   `user_id` smallint unsigned NOT NULL AUTO_INCREMENT,
   `country` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
@@ -76,21 +77,18 @@ UNLOCK TABLES;
 -- Table structure for table `level_data_user`
 --
 
-DROP TABLE IF EXISTS `level_data_user`;
+DROP TABLE IF EXISTS `level_data`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `level_data_user` (
+CREATE TABLE `level_data` (
   `level_name` varchar(32) NOT NULL,
   `user_id` smallint unsigned NOT NULL,
-  `lvl_1_highscore` smallint unsigned NOT NULL DEFAULT '0',
-  `lvl_2_highscore` smallint unsigned NOT NULL DEFAULT '0',
-  `lvl_1_rating` tinyint unsigned DEFAULT NULL,
-  `lvl_2_rating` tinyint unsigned DEFAULT NULL,
-  `lvl_1_attempts` smallint unsigned NOT NULL DEFAULT '0',
-  `lvl_2_attempts` smallint unsigned NOT NULL DEFAULT '0',
+  `lvl_highscore` smallint unsigned NOT NULL DEFAULT '0',
+  `lvl_rating` tinyint unsigned DEFAULT NULL,
+  `lvl_attempts` smallint unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`level_name`),
-  KEY `fk_level_data_user` (`user_id`),
-  CONSTRAINT `fk_level_data_user` FOREIGN KEY (`user_id`) REFERENCES `user_data` (`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  KEY `fk_level_data` (`user_id`),
+  CONSTRAINT `fk_level_data` FOREIGN KEY (`user_id`) REFERENCES `user_data` (`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE
   ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
   /*!40101 SET character_set_client = @saved_cs_client */;
   
@@ -98,9 +96,9 @@ CREATE TABLE `level_data_user` (
 -- Dumping data for table `level_data_user`
 --
 
-LOCK TABLES `level_data_user` WRITE;
-/*!40000 ALTER TABLE `level_data_user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `level_data_user` ENABLE KEYS */;
+LOCK TABLES `level_data` WRITE;
+/*!40000 ALTER TABLE `level_data` DISABLE KEYS */;
+/*!40000 ALTER TABLE `level_data` ENABLE KEYS */;
 UNLOCK TABLES; 
 
 DROP TABLE IF EXISTS `music_data`;

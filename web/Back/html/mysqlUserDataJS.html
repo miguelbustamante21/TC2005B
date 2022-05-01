@@ -25,8 +25,9 @@
     <div class="section">
         <div class="formInput">
             <h1>Add user</h1>
-            <form id="formInsert" method="post" action="http://localhost:5000/api/user_data">
+            <form id="formInsert" method="post" action="http://localhost:3000/api/user_data">
                 <input type="text" name="user_name" placeholder="Type your first name">
+                <input type="text" name="password" placeholder="Type your password">
                 <input type="text" name="country" placeholder="Type your country">
                 <input type="submit" value="Add User">
             </form>
@@ -42,6 +43,7 @@
             <form id="formUpdate" method="put">
                 <input type="text" name="user_id" placeholder="Type your id">
                 <input type="text" name="user_name" placeholder="Type your first new name">
+                <input type="text" name="password" placeholder="Type your new password">
                 <input type="text" name="country" placeholder="Type your new country">
                 <input type="submit" value="Update User">
             </form>

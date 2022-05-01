@@ -3,7 +3,7 @@ function main()
     formSelect.onsubmit = async (e) =>{
         e.preventDefault()
 
-        let response = await fetch('http://localhost:5000/api/user_data',{
+        let response = await fetch('http://localhost:3000/api/user_data',{
             method: 'GET'
         })
         
@@ -61,7 +61,7 @@ function main()
         //     data[key] = value
         // console.log(JSON.stringify(data))
 
-        let response = await fetch('http://localhost:5000/api/user_data',{
+        let response = await fetch('http://localhost:3000/api/user_data',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -86,7 +86,7 @@ function main()
         const data = new FormData(formUpdate)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:5000/api/user_data',{
+        let response = await fetch('http://localhost:3000/api/user_data',{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -111,7 +111,7 @@ function main()
         const data = new FormData(formDelete)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:5000/api/user_data',{
+        let response = await fetch('http://localhost:3000/api/user_data',{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
