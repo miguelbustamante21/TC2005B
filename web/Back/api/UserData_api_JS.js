@@ -118,7 +118,7 @@ app.delete('/api/user_data', (request, response)=>{
         response.json(error);
         console.log(error);
     }
-})
+});
 
 app.listen(port, ()=>
 {

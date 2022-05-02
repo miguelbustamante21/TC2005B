@@ -31,7 +31,9 @@ app.get('/', (request,response)=>{
     })
 });
 
-app.get('/api/user_data', (request, response)=>{
+//Get methods
+
+app.get('/api/user_data/get', (request, response)=>{
     let connection = connectToDB();
 
     try{
@@ -53,7 +55,7 @@ app.get('/api/user_data', (request, response)=>{
     }
 });
 
-app.get('/api/attempts', (request, response)=>{
+app.get('/api/attempts/get', (request, response)=>{
     let connection = connectToDB();
 
     try{
@@ -75,14 +77,14 @@ app.get('/api/attempts', (request, response)=>{
     }
 });
 
-app.get('/api/level_data_user', (request, response)=>{
+app.get('/api/level_data/get', (request, response)=>{
     let connection = connectToDB();
 
     try{
 
         connection.connect();
 
-        connection.query('select * from level_data_user', (error, results, fields)=>{
+        connection.query('select * from level_data', (error, results, fields)=>{
             if(error) console.log(error);
             console.log(JSON.stringify(results));
             response.json(results);
@@ -97,7 +99,7 @@ app.get('/api/level_data_user', (request, response)=>{
     }
 });
 
-app.get('/api/music_data', (request, response)=>{
+app.get('/api/music_data/get', (request, response)=>{
     let connection = connectToDB();
 
     try{
@@ -119,7 +121,9 @@ app.get('/api/music_data', (request, response)=>{
     }
 });
 
-app.post('/api/user_data', (request, response)=>{
+//Post methods
+
+app.post('/api/user_data/post', (request, response)=>{
 
     try{
         console.log(request.headers);
@@ -143,7 +147,7 @@ app.post('/api/user_data', (request, response)=>{
     }
 });
 
-app.post('/api/attempts', (request, response)=>{
+app.post('/api/attempts/post', (request, response)=>{
 
     try{
         console.log(request.headers);
@@ -167,7 +171,7 @@ app.post('/api/attempts', (request, response)=>{
     }
 });
 
-app.post('/api/level_data_user', (request, response)=>{
+app.post('/api/level_data/post', (request, response)=>{
 
     try{
         console.log(request.headers);
@@ -175,7 +179,7 @@ app.post('/api/level_data_user', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('insert into level_data_user set ?', request.body ,(error, results, fields)=>{
+        const query = connection.query('insert into level_data set ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -191,7 +195,7 @@ app.post('/api/level_data_user', (request, response)=>{
     }
 });
 
-app.post('/api/music_data', (request, response)=>{
+app.post('/api/music_data/post', (request, response)=>{
 
     try{
         console.log(request.headers);
@@ -215,12 +219,14 @@ app.post('/api/music_data', (request, response)=>{
     }
 });
 
-app.put('/api/user_data', (request, response)=>{
+//Put methods
+
+app.put('/api/user_data/put', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('update user_data set user_name = ?, country = ? where user_id = ?', [request.body['user_name'], request.body['country'], request.body['user_id']], (error, results, fields)=>{
+        const query = connection.query('update user_data set user_name = ?, password = ?, country = ? where user_id = ?', [request.body['user_name'], request.body['password'], request.body['country'], request.body['user_id']], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -236,12 +242,12 @@ app.put('/api/user_data', (request, response)=>{
     }
 });
 
-app.put('/api/attempts', (request, response)=>{
+app.put('/api/attempts/put', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('update attempts set level_att = ?, score = ? where user_id = ?', [request.body['level_att'], request.body['score'], request.body['user_id']], (error, results, fields)=>{
+        const query = connection.query('update attempts set level_att = ?, score = ?. accuracy = ?, time_elapsed = ?, date_time = ? where user_id = ?', [request.body['level_att'], request.body['score'], request.body['accuracy'], request.body['time_elapsed'], request.body['date_time'], request.body['user_id']], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -257,12 +263,12 @@ app.put('/api/attempts', (request, response)=>{
     }
 });
 
-app.put('/api/level_data_user', (request, response)=>{
+app.put('/api/level_data/put', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('update level_data_user set user_name = ?, country = ? where user_id = ?', [request.body['user_name'], request.body['country'], request.body['user_id']], (error, results, fields)=>{
+        const query = connection.query('update level_data set user_id = ?, lvl_highscore = ?, lvl_rating = ?, lvl_attempts = ? where level_name = ?', [request.body['user_id'], request.body['lvl_highscore'], request.body['lvl_rating'], request.body['lvl_attempts'], request.body['level_name']], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -278,7 +284,7 @@ app.put('/api/level_data_user', (request, response)=>{
     }
 });
 
-app.put('/api/music_data', (request, response)=>{
+app.put('/api/music_data/put', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
@@ -299,7 +305,9 @@ app.put('/api/music_data', (request, response)=>{
     }
 });
 
-app.delete('/api/user_data', (request, response)=>{
+//Delete methods
+
+app.delete('/api/user_data/delete', (request, response)=>{
     try
     {
         let connection = connectToDB();
@@ -319,9 +327,9 @@ app.delete('/api/user_data', (request, response)=>{
         response.json(error);
         console.log(error);
     }
-})
+});
 
-app.delete('/api/attempts', (request, response)=>{
+app.delete('/api/attempts/delete', (request, response)=>{
     try
     {
         let connection = connectToDB();
@@ -341,15 +349,15 @@ app.delete('/api/attempts', (request, response)=>{
         response.json(error);
         console.log(error);
     }
-})
+});
 
-app.delete('/api/level_data_user', (request, response)=>{
+app.delete('/api/level_data/delete', (request, response)=>{
     try
     {
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from level_data_user where user_id= ?', [request.body['id']] ,(error, results, fields)=>{
+        const query = connection.query('delete from level_data where level_name = ?', [request.body['level_name']] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -363,9 +371,9 @@ app.delete('/api/level_data_user', (request, response)=>{
         response.json(error);
         console.log(error);
     }
-})
+});
 
-app.delete('/api/music_data', (request, response)=>{
+app.delete('/api/music_data/delete', (request, response)=>{
     try
     {
         let connection = connectToDB();
@@ -385,7 +393,60 @@ app.delete('/api/music_data', (request, response)=>{
         response.json(error);
         console.log(error);
     }
-})
+});
+
+//verify users
+
+app.post('/api/user_data/verify', (request,response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('SELECT COUNT(1) from game_user where user_name=? and password=?', [request.body['user_name'], request.body['password']], (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results[0]["COUNT(1)"]));
+            response.json(results[0]["COUNT(1)"]);
+        });
+
+        connection.end();
+
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
+//get id
+
+app.post('/api/user_data/get_id', (request,response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('call get_id(?)', [request.body['user_name']], (error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                console.log(JSON.stringify(results[0][0]));
+                response.json(results[0][0]["user_id"]);
+        });
+
+        connection.end();
+
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
 
 app.listen(port, ()=>
 {

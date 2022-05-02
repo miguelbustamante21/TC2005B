@@ -118,7 +118,7 @@ app.delete('/api/attempts', (request, response)=>{
         response.json(error);
         console.log(error);
     }
-})
+});
 
 app.listen(port, ()=>
 {
