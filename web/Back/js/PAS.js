@@ -6,7 +6,7 @@ function main()
     formSelect.onsubmit = async (e) =>{
         e.preventDefault()
 
-        let response = await fetch('http://localhost:3000/api/user_data_get',{
+        let response = await fetch('http://localhost:3000/api/user_data/get',{
             method: 'GET'
         })
         
@@ -39,7 +39,7 @@ function main()
                 }
             }
 
-            const container = document.getElementById('getResults')
+            const container = document.getElementById('getResultUser')
             container.innerHTML = ''
             container.appendChild(table)
         }
@@ -64,7 +64,7 @@ function main()
         //     data[key] = value
         // console.log(JSON.stringify(data))
 
-        let response = await fetch('http://localhost:3000/api/user_data_post',{
+        let response = await fetch('http://localhost:3000/api/user_data/post',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -89,7 +89,7 @@ function main()
         const data = new FormData(formUpdate)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/user_data_put',{
+        let response = await fetch('http://localhost:3000/api/user_data/put',{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -114,7 +114,7 @@ function main()
         const data = new FormData(formDelete)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/user_data_delete',{
+        let response = await fetch('http://localhost:3000/api/user_data/delete',{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -137,7 +137,7 @@ function main()
     formSelect.onsubmit = async (e) =>{
         e.preventDefault()
 
-        let response = await fetch('http://localhost:3000/api/attempts_get',{
+        let response = await fetch('http://localhost:3000/api/attempts/get',{
             method: 'GET'
         })
         
@@ -170,7 +170,7 @@ function main()
                 }
             }
 
-            const container = document.getElementById('getResults')
+            const container = document.getElementById('getResultAttempts')
             container.innerHTML = ''
             container.appendChild(table)
         }
@@ -195,7 +195,7 @@ function main()
         //     data[key] = value
         // console.log(JSON.stringify(data))
 
-        let response = await fetch('http://localhost:3000/api/attempts_post',{
+        let response = await fetch('http://localhost:3000/api/attempts/post',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -220,7 +220,7 @@ function main()
         const data = new FormData(formUpdate)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/attempts_put',{
+        let response = await fetch('http://localhost:3000/api/attempts/put',{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -245,7 +245,7 @@ function main()
         const data = new FormData(formDelete)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/attempts_delete',{
+        let response = await fetch('http://localhost:3000/api/attempts/delete',{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -268,7 +268,7 @@ function main()
     formSelect.onsubmit = async (e) =>{
         e.preventDefault()
 
-        let response = await fetch('http://localhost:3000/api/level_data_get',{
+        let response = await fetch('http://localhost:3000/api/level_data/get',{
             method: 'GET'
         })
         
@@ -301,7 +301,7 @@ function main()
                 }
             }
 
-            const container = document.getElementById('getResults')
+            const container = document.getElementById('getResultLevelData')
             container.innerHTML = ''
             container.appendChild(table)
         }
@@ -326,7 +326,7 @@ function main()
         //     data[key] = value
         // console.log(JSON.stringify(data))
 
-        let response = await fetch('http://localhost:3000/api/level_data_post',{
+        let response = await fetch('http://localhost:3000/api/level_data/post',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -351,7 +351,7 @@ function main()
         const data = new FormData(formUpdate)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/level_data_put',{
+        let response = await fetch('http://localhost:3000/api/level_data/put',{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -376,7 +376,7 @@ function main()
         const data = new FormData(formDelete)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/level_data_delete',{
+        let response = await fetch('http://localhost:3000/api/level_data/delete',{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -399,7 +399,7 @@ function main()
     formSelect.onsubmit = async (e) =>{
         e.preventDefault()
 
-        let response = await fetch('http://localhost:3000/api/music_data_get',{
+        let response = await fetch('http://localhost:3000/api/music_data/get',{
             method: 'GET'
         })
         
@@ -432,7 +432,7 @@ function main()
                 }
             }
 
-            const container = document.getElementById('getResults')
+            const container = document.getElementById('getResultMusicData')
             container.innerHTML = ''
             container.appendChild(table)
         }
@@ -457,7 +457,7 @@ function main()
         //     data[key] = value
         // console.log(JSON.stringify(data))
 
-        let response = await fetch('http://localhost:3000/api/music_data_post',{
+        let response = await fetch('http://localhost:3000/api/music_data/post',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -482,7 +482,7 @@ function main()
         const data = new FormData(formUpdate)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/music_data_put',{
+        let response = await fetch('http://localhost:3000/api/music_data/put',{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -507,7 +507,7 @@ function main()
         const data = new FormData(formDelete)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:3000/api/music_data_delete',{
+        let response = await fetch('http://localhost:3000/api/music_data/delete',{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
