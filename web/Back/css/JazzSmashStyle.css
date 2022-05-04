@@ -390,4 +390,48 @@ h3{
     color: #fff;
 }
 
+/* Tables */
+
+.section
+{
+ margin: 1em;
+ padding: 1em;
+ border: 1px solid black;
+
+ display: flex;
+}
+
+.formInput, .resultDisplay
+{
+    flex: 1;
+}
+
+.section form{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.section form input{
+    margin: 0.2em;
+    max-width: 90%;
+}
+
+.resultDisplay p{
+    margin: 1em;
+}
+
+table, th, td 
+{
+    border: solid 1px #DDD;
+    border-collapse: collapse;
+    padding: 2px 3px;
+    text-align: center;
+}
+
+th 
+{
+    font-weight:bold;
+}
+
 

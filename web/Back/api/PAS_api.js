@@ -11,6 +11,8 @@ app.use(express.json());
 
 app.use('/js', express.static('./js'))
 app.use('/css', express.static('./css'))
+app.use('/html', express.static('./html'))
+app.use('/images', express.static('./images'))
 
 function connectToDB()
 {
@@ -73,7 +75,7 @@ app.get('/api/user_data/get', (request, response)=>{
 
         connection.connect();
 
-        connection.query('select * from user_data', (error, results, fields)=>{
+        connection.query('select user_name, user_id, country from user_data', (error, results, fields)=>{
             if(error) console.log(error);
             console.log(JSON.stringify(results));
             response.json(results);
