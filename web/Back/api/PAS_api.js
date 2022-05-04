@@ -439,7 +439,7 @@ app.post('/api/user_data/verify', (request,response)=>{
 
         connection.connect();
 
-        connection.query('SELECT COUNT(1) from game_user where user_name=? and password=?', [request.body['user_name'], request.body['password']], (error, results, fields)=>{
+        connection.query('SELECT COUNT(1) from user_data where user_name=? and password=?', [request.body['user_name'], request.body['password']], (error, results, fields)=>{
             if(error) console.log(error);
             console.log(JSON.stringify(results[0]["COUNT(1)"]));
             response.json(results[0]["COUNT(1)"]);
