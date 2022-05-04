@@ -29,7 +29,40 @@ app.get('/', (request,response)=>{
         console.log('Loading page...');
         response.send(html);
     })
+    
 });
+
+// app.get('/home', (request,response)=>{
+//     fs.readFile('./html/JazzSmashWeb.html', 'utf8', (err, html)=>{
+//         if(err) response.status(500).send('There was an error: ' + err);
+//         console.log('Loading page...');
+//         response.send(html);
+//     })
+// });
+
+// app.get('/about', (request,response)=>{
+//     fs.readFile('./html/AboutUsJazzSmash.html', 'utf8', (err, html)=>{
+//         if(err) response.status(500).send('There was an error: ' + err);
+//         console.log('Loading page...');
+//         response.send(html);
+//     })
+// });
+
+// app.get('/gd', (request,response)=>{
+//     fs.readFile('./html/GameDevelopmentJazzSmash.html', 'utf8', (err, html)=>{
+//         if(err) response.status(500).send('There was an error: ' + err);
+//         console.log('Loading page...');
+//         response.send(html);
+//     })
+// });
+
+// app.get('/hc', (request,response)=>{
+//     fs.readFile('./html/HealthCareJazzSmash.html', 'utf8', (err, html)=>{
+//         if(err) response.status(500).send('There was an error: ' + err);
+//         console.log('Loading page...');
+//         response.send(html);
+//     })
+// });
 
 //Get methods
 
